@@ -36,4 +36,17 @@ io.on("connection", function(socket){
 	})
 	.then(function(cursor){ return cursor.toArray();})
 	.then(function(output){ socket.emit("history",output) })
+
+	socket,on("add", function(text){
+		r.connect().then(function(conn){
+			return r.table("todo").insert({text:text, done:false})
+				.finally(function(){ conn.close();})
+		})
+	}).on("done",function(id, done){
+		r.connect().then(function(conn) {
+			return r.table("todo").get(id).update({done:done}).run(conn)
+				.finally(function(){ conn.close();})
+		})
+	})
 })
+
