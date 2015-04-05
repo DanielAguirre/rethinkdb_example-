@@ -35,7 +35,7 @@ io.on("connection", function(socket){
 			})
 	})
 	.then(function(cursor){ return cursor.toArray();})
-	.then(function(output){ console.log("history",output); socket.emit("history",output) })
+	.then(function(output){ socket.emit("history",output) })
 
 	socket.on("add", function(text){
 		r.connect().then(function(conn){

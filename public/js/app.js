@@ -4,10 +4,14 @@
 
 
 	var Item = React.createClass({
+		handleChange:function(e,value){
+			console.log(this.props.id,  this.props.done);
+			socket.emit("done",this.props.id, !this.props.done);
+		},
         render: function() {
             return (
                 <label >
-                    <input type="checkbox" checkd={this.props.done}/>
+                    <input type="checkbox" onChange={this.handleChange} checked={this.props.done}/>
                     {this.props.text}
                 </label>
             )
@@ -18,7 +22,7 @@
 		render: function(){
 			var itemNodes = this.props.data.map(function(item){
 				return (
-					<Item done={item.done} text={item.text} >
+					<Item done={item.done} text={item.text} id={item.id}>
 					</Item>
 				);
 			});
@@ -39,7 +43,6 @@
 			if(!item){
 				return
 			}
-			console.log(item);
 
 			React.findDOMNode(this.refs.item).value="";
 			socket.emit("add",item)
@@ -57,14 +60,13 @@
 
 	var ItemBox = React.createClass({
 		loadItemsFromServer: function(){
-			socket.on("history",function(items){
-				todo.list = items;
-				console.log("socket history emited", items);
+			socket.on("history",function(items){				
 				this.setState({data:items});
-			}.bind(this)).on("update", function(data){
-				console.log("update",data);
+			}.bind(this))
+			.on("update", function(data){
+				console.log("update");
 				this.setState({data:data})
-			})
+			}.bind(this));
 		},
 		getInitialState: function(){
 			return {data:[]};
@@ -74,7 +76,6 @@
 		},
 
 		render:function(){
-			console.log(this.state)
 			return (
 				<div className="commentBox">
 					<ItemList data={this.state.data}/>

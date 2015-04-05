@@ -28,3 +28,20 @@
 2015-04-05T00:23:41.252843928 1.039497s notice: Listening on addresses: 127.0.0.1, 127.0.1.1, ::1
 2015-04-05T00:23:41.252844790 1.039498s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
 2015-04-05T00:23:41.252847866 1.039501s notice: Server ready, "daniel_Inspiron_N4050_cco" 26993879-6074-47a9-92ba-b4736ea33719
+2015-04-05T00:54:19.435076800 1839.221730s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2015-04-05T00:54:19.486348951 1839.273003s notice: Shutting down client connections...
+2015-04-05T00:54:19.529262992 1839.315918s notice: All client connections closed.
+2015-04-05T00:54:19.529271868 1839.315925s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-04-05T00:54:20.310184148 1840.096838s notice: Storage engine shut down.
+2015-04-05T14:26:22.817996655 4.072350s notice: Running rethinkdb 1.16.3 (GCC 4.8.2)...
+2015-04-05T14:26:22.833370225 4.087728s notice: Running on Linux 3.13.0-48-generic x86_64
+2015-04-05T14:26:22.833541048 4.087895s notice: Loading data from directory /home/daniel/Documentos/node/rethinkdb_example/rethinkdb_data
+2015-04-05T14:26:23.290160754 4.544514s info: Automatically using cache size of 100 MB
+2015-04-05T14:26:23.291122408 4.545476s warn: Cache size does not leave much memory for server and query overhead (available memory: 828 MB).
+2015-04-05T14:26:23.291128916 4.545482s warn: Cache size is very low and may impact performance.
+2015-04-05T14:26:23.292145799 4.546499s notice: Listening for intracluster connections on port 29015
+2015-04-05T14:26:23.316301014 4.570654s notice: Listening for client driver connections on port 28015
+2015-04-05T14:26:23.316446826 4.570800s notice: Listening for administrative HTTP connections on port 8080
+2015-04-05T14:26:23.316450517 4.570803s notice: Listening on addresses: 127.0.0.1, 127.0.1.1, ::1
+2015-04-05T14:26:23.316453264 4.570806s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-04-05T14:26:23.316455975 4.570809s notice: Server ready, "daniel_Inspiron_N4050_cco" 26993879-6074-47a9-92ba-b4736ea33719
