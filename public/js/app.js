@@ -5,7 +5,8 @@
         render: function() {
             return (
                 <label >
-                    <input type="checkbox" />
+                    <input type="checkbox" checkd={this.props.done}/>
+                    {this.props.text}
                 </label>
             )
         }
