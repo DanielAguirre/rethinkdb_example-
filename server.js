@@ -48,5 +48,4 @@ io.on("connection", function(socket){
 				.finally(function(){ conn.close();})
 		})
 	})
-})
-
+});
