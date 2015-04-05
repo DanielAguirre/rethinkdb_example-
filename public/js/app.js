@@ -2,11 +2,6 @@
 	var socket = io.connect();
 	var todo = {};
 
-	socket.on("history",function(items){
-		todo.list = items;
-	}).on("update", function(data){
-		console.log("update",data);
-	})
 
 	var Item = React.createClass({
         render: function() {
@@ -23,14 +18,14 @@
 		render: function(){
 			var itemNodes = this.props.data.map(function(item){
 				return (
-					<Item done={item.done} text={itemtext} >
+					<Item done={item.done} text={item.text} >
 					</Item>
 				);
 			});
 			
 			return (
 				<div className="itemList">
-					{ItemNodes}
+					{itemNodes}
 				</div>
 			)
 		}
@@ -61,10 +56,28 @@
 	});
 
 	var ItemBox = React.createClass({
+		loadItemsFromServer: function(){
+			socket.on("history",function(items){
+				todo.list = items;
+				console.log("socket history emited", items);
+				this.setState({data:items});
+			}.bind(this)).on("update", function(data){
+				console.log("update",data);
+				this.setState({data:data})
+			})
+		},
+		getInitialState: function(){
+			return {data:[]};
+		},
+		componentDidMount: function(){
+			this.loadItemsFromServer();
+		},
+
 		render:function(){
+			console.log(this.state)
 			return (
 				<div className="commentBox">
-					<Item />
+					<ItemList data={this.state.data}/>
 					<ItemForm />
 				</div>
 			)

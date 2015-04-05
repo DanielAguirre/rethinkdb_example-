@@ -22,7 +22,6 @@ r.connect().then(function(conn){
 	return r.table("todo").changes().run(conn)
 })
 .then(function(cursor){
-	console.log("cursor",cursor);
 	cursor.each(function(err, item){
 		io.sockets.emit("update",item)
 	});
@@ -36,7 +35,7 @@ io.on("connection", function(socket){
 			})
 	})
 	.then(function(cursor){ return cursor.toArray();})
-	.then(function(output){ socket.emit("history",output) })
+	.then(function(output){ console.log("history",output); socket.emit("history",output) })
 
 	socket.on("add", function(text){
 		r.connect().then(function(conn){
