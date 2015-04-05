@@ -1,5 +1,12 @@
 (function(){
 	var socket = io.connect();
+	var todo = {};
+
+	socket.on("history",function(items){
+		todo.list = items;
+	}).on("update", function(data){
+		console.log("update",data);
+	})
 
 	var Item = React.createClass({
         render: function() {
