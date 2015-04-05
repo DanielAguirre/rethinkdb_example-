@@ -12,6 +12,23 @@
         }
 	});
 
+	var ItemList = React.createClass({
+		render: function(){
+			var itemNodes = this.props.data.map(function(item){
+				return (
+					<Item done={item.done} text={itemtext} >
+					</Item>
+				);
+			});
+			
+			return (
+				<div className="itemList">
+					{ItemNodes}
+				</div>
+			)
+		}
+	});
+
 	var ItemForm = React.createClass({
 		render: function() {
 			return (
@@ -26,7 +43,7 @@
 	var ItemBox = React.createClass({
 		render:function(){
 			return (
-				<div>
+				<div className="commentBox">
 					<Item />
 					<ItemForm />
 				</div>
