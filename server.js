@@ -5,7 +5,7 @@ var r = require("rethinkdb");
 var swig = require('swig');
 
 var app = express();
-var io = socketio.listen(app.listen(3000));
+var io = socketio.listen(app.listen(8000));
 console.log("App is listening on 3000")
 
 app.use(express.static(__dirname +"/public"))
@@ -37,7 +37,7 @@ io.on("connection", function(socket){
 	.then(function(cursor){ return cursor.toArray();})
 	.then(function(output){ socket.emit("history",output) })
 
-	socket,on("add", function(text){
+	socket.on("add", function(text){
 		r.connect().then(function(conn){
 			return r.table("todo").insert({text:text, done:false})
 				.finally(function(){ conn.close();})
