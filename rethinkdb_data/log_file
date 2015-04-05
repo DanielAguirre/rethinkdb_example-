@@ -1,0 +1,15 @@
+2015-04-04T17:44:30.250284129 4.352492s notice: Recursively removing directory /home/daniel/Documentos/node/rethinkdb_example/rethinkdb_data/tmp
+2015-04-04T17:44:30.336835543 4.439043s notice: Initializing directory /home/daniel/Documentos/node/rethinkdb_example/rethinkdb_data
+2015-04-04T17:44:30.337016206 4.439224s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/daniel/Documentos/node/rethinkdb_example/rethinkdb_data' did not already exist or is empty.)
+2015-04-04T17:44:30.337049856 4.439257s notice: Running rethinkdb 1.16.3 (GCC 4.8.2)...
+2015-04-04T17:44:30.340981253 4.443192s notice: Running on Linux 3.13.0-48-generic x86_64
+2015-04-04T17:44:30.341093851 4.443301s notice: Loading data from directory /home/daniel/Documentos/node/rethinkdb_example/rethinkdb_data
+2015-04-04T17:44:31.509171881 5.611379s info: Automatically using cache size of 100 MB
+2015-04-04T17:44:31.510549867 5.612758s warn: Cache size does not leave much memory for server and query overhead (available memory: 1069 MB).
+2015-04-04T17:44:31.510565262 5.612773s warn: Cache size is very low and may impact performance.
+2015-04-04T17:44:31.512085170 5.614293s notice: Listening for intracluster connections on port 29015
+2015-04-04T17:44:31.545486108 5.647694s notice: Listening for client driver connections on port 28015
+2015-04-04T17:44:31.545620939 5.647828s notice: Listening for administrative HTTP connections on port 8080
+2015-04-04T17:44:31.545624372 5.647831s notice: Listening on addresses: 127.0.0.1, 127.0.1.1, ::1
+2015-04-04T17:44:31.545626777 5.647834s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-04-04T17:44:31.545629370 5.647836s notice: Server ready, "daniel_Inspiron_N4050_cco" 26993879-6074-47a9-92ba-b4736ea33719
