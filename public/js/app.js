@@ -30,11 +30,24 @@
 	});
 
 	var ItemForm = React.createClass({
+		handleSubmmit: function(e){
+			e.preventDefault();
+			var item = React.findDOMNode(this.refs.item).value.trim();
+
+			if(!item){
+				return
+			}
+			console.log(item);
+
+			React.findDOMNode(this.refs.item).value="";
+			socket.emit("add",item)
+			return;
+		},
 		render: function() {
 			return (
-				<form>
-					<input type="text"/>
-					<button>Add </button>
+				<form onSubmit={this.handleSubmmit}>
+					<input type="text" ref="item"/>
+					<button type="submit">Add </button>
 				</form>
 			)
 		}

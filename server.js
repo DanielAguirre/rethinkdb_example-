@@ -39,7 +39,7 @@ io.on("connection", function(socket){
 
 	socket.on("add", function(text){
 		r.connect().then(function(conn){
-			return r.table("todo").insert({text:text, done:false})
+			return r.table("todo").insert({text:text, done:false}).run(conn)
 				.finally(function(){ conn.close();})
 		})
 	}).on("done",function(id, done){
