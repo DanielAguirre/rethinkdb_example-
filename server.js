@@ -8,7 +8,7 @@ var app = express();
 var io = socketio.listen(app.listen(3000));
 console.log("App is listening on 3000")
 
-app.use(express.static(__dirname +"/public;"))
+app.use(express.static(__dirname +"/public"))
 
 app.engine('html',swig.renderFile);
 app.set('view engine','html');

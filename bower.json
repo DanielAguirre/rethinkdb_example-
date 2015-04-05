@@ -1,15 +1,20 @@
 {
-  "name": "public",
+  "name": "rethinkdb_example",
   "version": "0.0.0",
   "authors": [
     "DanielAguirre <danter1@gmail.com>"
   ],
+  "description": "Ejemplo usando rethinkdb y react",
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "./public/js/vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "react": "~0.13.1"
+  }
 }
