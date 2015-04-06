@@ -19,6 +19,7 @@
 	});
 
 	var ItemList = React.createClass({
+		
 		render: function(){
 			var itemNodes = this.props.data.map(function(item){
 				return (
