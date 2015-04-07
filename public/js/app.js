@@ -2,10 +2,8 @@
 	var socket = io.connect();
 	var todo = {};
 
-
 	var Item = React.createClass({
 		handleChange:function(e,value){
-			console.log(this.props.id,  this.props.done);
 			socket.emit("done",this.props.id, !this.props.done);
 		},
         render: function() {
@@ -19,7 +17,6 @@
 	});
 
 	var ItemList = React.createClass({
-		
 		render: function(){
 			var itemNodes = this.props.data.map(function(item){
 				return (
@@ -61,14 +58,27 @@
 
 	var ItemBox = React.createClass({
 		loadItemsFromServer: function(){
-			socket.on("history",function(items){				
+			socket.on("history",function(items){
+				todo.list=items;
 				this.setState({data:items});
+				console.log("history")
 			}.bind(this))
 			.on("update", function(data){
-				console.log("update");
-				this.setState({data:data})
+				if(data.new_val && !data.old_val){
+					todo.list.push(data.new_val);
+					this.setState({data:todo.list});
+					return
+				}
+				
+				for(var item in todo.list){
+					if(todo.list[item].id == data.old_val.id){
+						todo.list[item] = data.new_val;
+					}
+				}
+				this.setState({data:todo.list})
 			}.bind(this));
 		},
+
 		getInitialState: function(){
 			return {data:[]};
 		},
