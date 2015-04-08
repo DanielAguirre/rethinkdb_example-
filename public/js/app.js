@@ -61,7 +61,6 @@
 			socket.on("history",function(items){
 				todo.list=items;
 				this.setState({data:items});
-				console.log("history")
 			}.bind(this))
 			.on("update", function(data){
 				if(data.new_val && !data.old_val){

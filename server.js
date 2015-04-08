@@ -6,7 +6,7 @@ var swig = require('swig');
 
 var app = express();
 var io = socketio.listen(app.listen(8000));
-console.log("App is listening on 3000")
+console.log("App is listening on 8000")
 
 app.use(express.static(__dirname +"/public"))
 
