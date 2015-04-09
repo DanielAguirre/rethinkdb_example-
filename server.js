@@ -18,7 +18,8 @@ app.get("/",function(req,res){
 	res.render("index.html")
 })
 
-r.connect().then(function(conn){
+
+r.connect().then(function(conn){	
 	return r.table("todo").changes().run(conn)
 })
 .then(function(cursor){

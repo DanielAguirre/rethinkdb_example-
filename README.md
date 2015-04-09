@@ -24,6 +24,8 @@ bower install
 First you should run rethikdb in your local host using the next comand
 `rethinkdb`
 
+Also you nedd to create a 'todo' table to do it go to [localhost:8080](localhost:8080) -> Tables click in  'Add table' in Name write todo and choose 'test' like a database
+
 Now you can run 
 `node server.js`
 
@@ -54,6 +56,8 @@ bower install
 ## Uso
 Primero denes de correr rethinkdb en tu localhost usando el siguiente comando
 `rethinkdb`
+
+Ademas necesitaras crear la tabla 'todo' para hacerlo vea a [localhost:8080](localhost:8080) -> Tables click en  'Add table' en Nombre escribe 'todo' y escoge  'test' como base de datos
 
 Ahora puedes usar
 `node server.js`
